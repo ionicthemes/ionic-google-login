@@ -1,0 +1,40 @@
+import { EventEmitter } from '@angular/core';
+import { Config } from '../config/config';
+import { NavOptions } from './nav-util';
+import { ViewController } from './view-controller';
+export declare abstract class NavController {
+    viewDidLoad: EventEmitter<any>;
+    viewWillEnter: EventEmitter<any>;
+    viewDidEnter: EventEmitter<any>;
+    viewWillLeave: EventEmitter<any>;
+    viewDidLeave: EventEmitter<any>;
+    viewWillUnload: EventEmitter<any>;
+    id: string;
+    parent: any;
+    config: Config;
+    abstract push(page: any, params?: any, opts?: NavOptions, done?: Function): Promise<any>;
+    abstract insert(insertIndex: number, page: any, params?: any, opts?: NavOptions, done?: Function): Promise<any>;
+    abstract insertPages(insertIndex: number, insertPages: Array<{
+        page: any;
+        params?: any;
+    }>, opts?: NavOptions, done?: Function): Promise<any>;
+    abstract pop(opts?: NavOptions, done?: Function): Promise<any>;
+    abstract popToRoot(opts?: NavOptions, done?: Function): Promise<any>;
+    abstract popTo(page: any, params?: any, opts?: NavOptions, done?: Function): Promise<any>;
+    abstract remove(startIndex: number, removeCount?: number, opts?: NavOptions, done?: Function): Promise<any>;
+    abstract setRoot(pageOrViewCtrl: any, params?: any, opts?: NavOptions, done?: Function): Promise<any>;
+    abstract setPages(pages: any[], opts?: NavOptions, done?: Function): Promise<any>;
+    abstract getByIndex(index: number): ViewController;
+    abstract getActive(includeEntering?: boolean): ViewController;
+    abstract isActive(view: ViewController): boolean;
+    abstract getPrevious(view?: ViewController): ViewController;
+    abstract first(): ViewController;
+    abstract last(): ViewController;
+    abstract indexOf(view: ViewController): number;
+    abstract length(): number;
+    abstract getViews(): Array<ViewController>;
+    abstract getActiveChildNav(): any;
+    abstract isTransitioning(includeAncestors?: boolean): boolean;
+    abstract canSwipeBack(): boolean;
+    abstract canGoBack(): boolean;
+}

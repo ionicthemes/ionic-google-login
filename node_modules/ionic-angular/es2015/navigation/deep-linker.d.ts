@@ -1,0 +1,36 @@
+import { Location } from '@angular/common';
+import { App } from '../components/app/app';
+import { NavSegment } from './nav-util';
+import { NavController } from './nav-controller';
+import { Tab } from '../components/tabs/tab';
+import { Tabs } from '../components/tabs/tabs';
+import { UrlSerializer } from './url-serializer';
+import { ViewController } from './view-controller';
+export declare class DeepLinker {
+    _app: App;
+    _serializer: UrlSerializer;
+    _location: Location;
+    segments: NavSegment[];
+    history: string[];
+    indexAliasUrl: string;
+    constructor(_app: App, _serializer: UrlSerializer, _location: Location);
+    init(): void;
+    urlChange(browserUrl: string): void;
+    navChange(direction: string): void;
+    updateLocation(browserUrl: string, direction: string): void;
+    getComponentFromName(componentName: any): any;
+    createUrl(nav: any, nameOrComponent: any, data: any, prepareExternalUrl?: boolean): string;
+    pathFromNavs(nav: NavController, component?: any, data?: any): NavSegment[];
+    getTabSelector(tab: Tab): string;
+    getSelectedTabIndex(tabsNav: Tabs, pathName: string, fallbackIndex?: number): number;
+    initNav(nav: any): NavSegment;
+    initViews(segment: NavSegment): ViewController[];
+    loadNavFromPath(nav: NavController, done?: Function): void;
+    loadViewFromSegment(navInstance: any, done: Function): void;
+    isBackUrl(browserUrl: string): boolean;
+    isCurrentUrl(browserUrl: string): boolean;
+    historyPush(browserUrl: string): void;
+    historyPop(): void;
+}
+export declare function setupDeepLinker(app: App, serializer: UrlSerializer, location: Location): DeepLinker;
+export declare function normalizeUrl(browserUrl: string): string;

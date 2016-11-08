@@ -1,0 +1,1 @@
+{"version":3,"file":"ionic-error-handler.js","sourceRoot":"","sources":["ionic-error-handler.ts"],"names":[],"mappings":"AAMA;IACE,OAAO,WAAW,CAAC,GAAQ;QACzB,IAAI,MAAM,GAAG,MAAM,CAAC,gBAAgB,CAAC,CAAC;QACtC,EAAE,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC;YACX,MAAM,CAAC,WAAW,CAAC,GAAG,CAAC,CAAC;QAC1B,CAAC;IACH,CAAC;AACH,CAAC;AAAA"}

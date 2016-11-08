@@ -1,0 +1,25 @@
+export declare function clamp(min: number, n: number, max: number): number;
+export declare function assign(...args: any[]): any;
+export declare function merge(dst: any, ...args: any[]): any;
+export declare function debounce(fn: Function, wait: number, immediate?: boolean): any;
+export declare function defaults(dest: any, ...args: any[]): any;
+export declare const isBoolean: (val: any) => boolean;
+export declare const isString: (val: any) => boolean;
+export declare const isNumber: (val: any) => boolean;
+export declare const isFunction: (val: any) => boolean;
+export declare const isDefined: (val: any) => boolean;
+export declare const isUndefined: (val: any) => boolean;
+export declare const isPresent: (val: any) => boolean;
+export declare const isBlank: (val: any) => boolean;
+export declare const isObject: (val: any) => boolean;
+export declare const isArray: (arg: any) => arg is any[];
+export declare const isPrimitive: (val: any) => boolean;
+export declare const isTrueProperty: (val: any) => boolean;
+export declare const isCheckedProperty: (a: any, b: any) => boolean;
+export declare function reorderArray(array: any[], indexes: {
+    from: number;
+    to: number;
+}): any[];
+export declare function swipeShouldReset(isResetDirection: boolean, isMovingFast: boolean, isOnResetZone: boolean): boolean;
+declare function _assert(actual: any, reason?: string): void;
+export { _assert as assert };

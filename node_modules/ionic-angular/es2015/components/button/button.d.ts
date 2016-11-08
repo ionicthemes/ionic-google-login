@@ -1,0 +1,30 @@
+import { ElementRef, Renderer } from '@angular/core';
+import { Config } from '../../config/config';
+import { Ion } from '../ion';
+export declare class Button extends Ion {
+    _role: string;
+    _mt: boolean;
+    _size: string;
+    _style: string;
+    _shape: string;
+    _display: string;
+    _init: boolean;
+    large: boolean;
+    small: boolean;
+    default: boolean;
+    outline: boolean;
+    clear: boolean;
+    solid: boolean;
+    round: boolean;
+    block: boolean;
+    full: boolean;
+    mode: string;
+    _attr(type: string, attrName: string, attrValue: boolean): void;
+    color: string;
+    constructor(menuToggle: string, ionButton: string, config: Config, elementRef: ElementRef, renderer: Renderer);
+    ngAfterContentInit(): void;
+    setRole(val: string): void;
+    _assignCss(assignCssClass: boolean): void;
+    _setClass(type: string, assignCssClass: boolean): void;
+    _updateColor(color: string, isAdd: boolean): void;
+}

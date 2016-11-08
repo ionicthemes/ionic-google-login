@@ -1,0 +1,12 @@
+@import "../../themes/ionic.globals.md";
+
+// Material Design Modals
+// --------------------------------------------------
+
+/// @prop - Background color for the modal
+$modal-md-background-color:          $background-md-color !default;
+
+.md .modal-wrapper {
+  opacity: .01;
+  transform: translate3d(0, 40px, 0);
+}
