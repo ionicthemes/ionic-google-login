@@ -10,10 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
+import { UserPage } from '../pages/user/user';
 export var AppModule = (function () {
     function AppModule() {
     }
@@ -21,10 +19,8 @@ export var AppModule = (function () {
         NgModule({
             declarations: [
                 MyApp,
-                AboutPage,
-                ContactPage,
-                HomePage,
-                TabsPage
+                LoginPage,
+                UserPage
             ],
             imports: [
                 IonicModule.forRoot(MyApp)
@@ -32,10 +28,8 @@ export var AppModule = (function () {
             bootstrap: [IonicApp],
             entryComponents: [
                 MyApp,
-                AboutPage,
-                ContactPage,
-                HomePage,
-                TabsPage
+                LoginPage,
+                UserPage
             ],
             providers: []
         }), 

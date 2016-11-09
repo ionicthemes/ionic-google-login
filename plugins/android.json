@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        },
+        "cordova-plugin-googleplus": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        }
+    },
+    "dependent_plugins": {}
+}

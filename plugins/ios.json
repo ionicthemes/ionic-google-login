@@ -24,6 +24,10 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-googleplus": {
+            "REVERSED_CLIENT_ID": "1091419544653-jatmpprlpohdu6hm88r0k4en1s5t64n0.apps.googleusercontent.com",
+            "PACKAGE_NAME": "io.ionic.starter"
         }
     },
     "dependent_plugins": {}
