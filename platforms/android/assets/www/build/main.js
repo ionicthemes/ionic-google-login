@@ -21006,9 +21006,10 @@ var tabIds = -1;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__translation_translate_pipe__ = __webpack_require__(569);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__module__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__module__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_0__module__["c"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__module__["d"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "e", function() { return __WEBPACK_IMPORTED_MODULE_1__directives__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__module__["c"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "e", function() { return __WEBPACK_IMPORTED_MODULE_0__module__["d"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__directives__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "f", function() { return __WEBPACK_IMPORTED_MODULE_1__directives__["c"]; });
 /* unused harmony namespace reexport */
 /* unused harmony namespace reexport */
 /* unused harmony namespace reexport */
@@ -21297,30 +21298,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var LoginPage = (function () {
-    function LoginPage(navCtrl) {
+    function LoginPage(navCtrl, loadingCtrl) {
         this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
     }
     LoginPage.prototype.doGoogleLogin = function () {
         var nav = this.navCtrl;
+        var loading = this.loadingCtrl.create({
+            content: 'Please wait...'
+        });
+        loading.present();
         __WEBPACK_IMPORTED_MODULE_3_ionic_native__["a" /* GooglePlus */].login({
-            'scopes': 'email',
+            'scopes': '',
             'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com',
             'offline': true, })
             .then(function (user) {
+            loading.dismiss();
             nav.push(__WEBPACK_IMPORTED_MODULE_2__user_user__["a" /* UserPage */], {
                 userName: user.displayName,
                 userEmail: user.email,
                 userPicture: user.imageUrl
             });
         }, function (error) {
+            loading.dismiss();
             console.log(error);
         });
     };
     LoginPage = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/startapplabs/IonicThemes/Ionic2GoogleLogin/src/pages/login/login.html"*/'<ion-content class="login-content" padding>\n  <ion-row class="top-row">\n    <ion-col>\n      <h1 class="label-logo">LOGO</h1>\n      <p class="label-description">This app helps you discover and buy amezing things all in one place</p>\n    </ion-col>\n  </ion-row>\n  <ion-row class="bottom-row">\n    <ion-col class="login-button">\n      <button ion-button block color="danger" (click)="doGoogleLogin()">Google Login</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/startapplabs/IonicThemes/Ionic2GoogleLogin/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/startapplabs/IonicThemes/Ionic2GoogleLogin/src/pages/login/login.html"*/'<ion-content class="login-content" padding>\n  <ion-row class="top-row">\n    <ion-col>\n      <h1 class="label-logo">LOGO</h1>\n      <p class="label-description">This app helps you discover and buy amazing things all in one place</p>\n    </ion-col>\n  </ion-row>\n  <ion-row class="bottom-row">\n    <ion-col class="login-button">\n      <button ion-button block color="danger" (click)="doGoogleLogin()">Google Login</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/startapplabs/IonicThemes/Ionic2GoogleLogin/src/pages/login/login.html"*/,
         }), 
-        __metadata('design:paramtypes', [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */]])
+        __metadata('design:paramtypes', [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* LoadingController */]])
     ], LoginPage);
     return LoginPage;
 }());
@@ -53382,7 +53390,7 @@ var QUEUE_CHANGE_DETECTION = 0;
 /* unused harmony reexport InfiniteScrollContent */
 /* unused harmony reexport TextInput */
 /* unused harmony reexport TextArea */
-/* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_15__components_app_app_root__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(exports, "c", function() { return __WEBPACK_IMPORTED_MODULE_15__components_app_app_root__["b"]; });
 /* unused harmony reexport ItemContent */
 /* unused harmony reexport ItemGroup */
 /* unused harmony reexport Item */
@@ -53394,7 +53402,7 @@ var QUEUE_CHANGE_DETECTION = 0;
 /* unused harmony reexport List */
 /* unused harmony reexport ListHeader */
 /* unused harmony reexport Loading */
-/* unused harmony reexport LoadingController */
+/* harmony reexport (binding) */ __webpack_require__.d(exports, "b", function() { return __WEBPACK_IMPORTED_MODULE_62__components_loading_loading__["a"]; });
 /* unused harmony reexport Menu */
 /* unused harmony reexport MenuClose */
 /* unused harmony reexport MenuController */
@@ -70578,9 +70586,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4__pages_user_user__["a" /* UserPage */]
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* MyApp */])
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* MyApp */])
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_3__pages_login_login__["a" /* LoginPage */],
@@ -70653,7 +70661,7 @@ var MyApp = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Component */])({
             template: "<ion-nav [root]=\"rootPage\"></ion-nav>"
         }), 
-        __metadata('design:paramtypes', [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Platform */]])
+        __metadata('design:paramtypes', [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Platform */]])
     ], MyApp);
     return MyApp;
 }());

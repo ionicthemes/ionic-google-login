@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { UserPage } from '../user/user';
 import { GooglePlus } from 'ionic-native';
 
@@ -9,24 +9,31 @@ import { GooglePlus } from 'ionic-native';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController) {
 
   }
 
   doGoogleLogin(){
     let nav = this.navCtrl;
+    let loading = this.loadingCtrl.create({
+    content: 'Please wait...'
+    });
+    loading.present();
     GooglePlus.login({
-      'scopes': 'email', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
+      'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
       'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true,})
     .then(function (user) {
+      loading.dismiss();
       nav.push(UserPage,{
            userName: user.displayName,
            userEmail: user.email,
            userPicture: user.imageUrl
          });
     }, function (error) {
+      loading.dismiss();
       console.log(error);
     });
+
   }
 }
