@@ -19,8 +19,6 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       let env = this;
-      NativeStorage.getItem('user')
-      .then( function (data) {
         // user is previously logged and we have his data
         // we will let him access the app
         GooglePlus.trySilentLogin({
@@ -32,12 +30,8 @@ export class MyApp {
             Splashscreen.hide();
           }, function (error){
             env.nav.push(LoginPage);
+            Splashscreen.hide();
           })
-      }, function (error) {
-        //we don't have the user data so we will ask him to log in
-        env.nav.push(LoginPage);
-        Splashscreen.hide();
-      });
       StatusBar.styleDefault();
     });
   }

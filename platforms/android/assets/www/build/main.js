@@ -70671,22 +70671,16 @@ var MyApp = (function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             var env = _this;
-            __WEBPACK_IMPORTED_MODULE_2_ionic_native__["a" /* NativeStorage */].getItem('user')
+            // user is previously logged and we have his data
+            // we will let him access the app
+            __WEBPACK_IMPORTED_MODULE_2_ionic_native__["b" /* GooglePlus */].trySilentLogin({
+                'scopes': '',
+                'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com',
+                'offline': true, })
                 .then(function (data) {
-                // user is previously logged and we have his data
-                // we will let him access the app
-                __WEBPACK_IMPORTED_MODULE_2_ionic_native__["b" /* GooglePlus */].trySilentLogin({
-                    'scopes': '',
-                    'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com',
-                    'offline': true, })
-                    .then(function (data) {
-                    env.nav.push(__WEBPACK_IMPORTED_MODULE_4__pages_user_user__["a" /* UserPage */]);
-                    __WEBPACK_IMPORTED_MODULE_2_ionic_native__["c" /* Splashscreen */].hide();
-                }, function (error) {
-                    env.nav.push(__WEBPACK_IMPORTED_MODULE_3__pages_login_login__["a" /* LoginPage */]);
-                });
+                env.nav.push(__WEBPACK_IMPORTED_MODULE_4__pages_user_user__["a" /* UserPage */]);
+                __WEBPACK_IMPORTED_MODULE_2_ionic_native__["c" /* Splashscreen */].hide();
             }, function (error) {
-                //we don't have the user data so we will ask him to log in
                 env.nav.push(__WEBPACK_IMPORTED_MODULE_3__pages_login_login__["a" /* LoginPage */]);
                 __WEBPACK_IMPORTED_MODULE_2_ionic_native__["c" /* Splashscreen */].hide();
             });

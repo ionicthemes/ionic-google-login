@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
-import { StatusBar, Splashscreen, NativeStorage, GooglePlus } from 'ionic-native';
+import { StatusBar, Splashscreen, GooglePlus } from 'ionic-native';
 import { LoginPage } from '../pages/login/login';
 import { UserPage } from '../pages/user/user';
 export var MyApp = (function () {
@@ -19,22 +19,16 @@ export var MyApp = (function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             var env = _this;
-            NativeStorage.getItem('user')
+            // user is previously logged and we have his data
+            // we will let him access the app
+            GooglePlus.trySilentLogin({
+                'scopes': '',
+                'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com',
+                'offline': true, })
                 .then(function (data) {
-                // user is previously logged and we have his data
-                // we will let him access the app
-                GooglePlus.trySilentLogin({
-                    'scopes': '',
-                    'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com',
-                    'offline': true, })
-                    .then(function (data) {
-                    env.nav.push(UserPage);
-                    Splashscreen.hide();
-                }, function (error) {
-                    env.nav.push(LoginPage);
-                });
+                env.nav.push(UserPage);
+                Splashscreen.hide();
             }, function (error) {
-                //we don't have the user data so we will ask him to log in
                 env.nav.push(LoginPage);
                 Splashscreen.hide();
             });
