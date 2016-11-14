@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { UserPage } from '../user/user';
-import { GooglePlus } from 'ionic-native';
+import { GooglePlus, NativeStorage } from 'ionic-native';
 export var LoginPage = (function () {
     function LoginPage(navCtrl, loadingCtrl) {
         this.navCtrl = navCtrl;
@@ -28,14 +28,18 @@ export var LoginPage = (function () {
             'offline': true, })
             .then(function (user) {
             loading.dismiss();
-            nav.push(UserPage, {
-                userName: user.displayName,
-                userEmail: user.email,
-                userPicture: user.imageUrl
+            NativeStorage.setItem('user', {
+                name: user.displayName,
+                email: user.email,
+                picture: user.imageUrl
+            })
+                .then(function () {
+                nav.push(UserPage);
+            }, function (error) {
+                console.log(error);
             });
         }, function (error) {
             loading.dismiss();
-            console.log(error);
         });
     };
     LoginPage = __decorate([

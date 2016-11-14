@@ -27,6 +27,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         }
     },
     "dependent_plugins": {}

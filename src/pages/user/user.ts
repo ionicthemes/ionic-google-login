@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-
-import { NavController, NavParams } from 'ionic-angular';
-import { GooglePlus } from 'ionic-native';
-
+import { NavController } from 'ionic-angular';
+import { GooglePlus, NativeStorage } from 'ionic-native';
 import { LoginPage } from '../login/login';
 
 @Component({
@@ -13,18 +11,30 @@ import { LoginPage } from '../login/login';
 export class UserPage {
 
   user: any;
+  userReady: boolean = false;
 
-  constructor(public navCtrl: NavController, private navParams: NavParams) {
-    this.user = {name : navParams.get('userName'),
-                 email : navParams.get('userEmail'),
-                 picture : navParams.get('userPicture')
-               }
+  constructor(public navCtrl: NavController) {}
+
+  ionViewCanEnter(){
+    let env = this;
+    NativeStorage.getItem('user')
+    .then(function (data){
+      env.user = {
+        name: data.name,
+        email: data.email,
+        picture: data.picture
+      };
+        env.userReady = true;
+    }, function(error){
+      console.log(error);
+    });
   }
 
   doGoogleLogout(){
     let nav = this.navCtrl;
     GooglePlus.logout()
     .then(function (response) {
+        NativeStorage.remove('user');
         nav.push(LoginPage);
     },function (error) {
         console.log(error);

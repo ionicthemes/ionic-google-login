@@ -56,5 +56,13 @@
         "variables": {
             "REVERSED_CLIENT_ID": "1091419544653"
         }
+    },
+    "cordova-plugin-nativestorage": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-nativestorage"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
