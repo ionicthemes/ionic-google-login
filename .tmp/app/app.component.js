@@ -24,7 +24,8 @@ export var MyApp = (function () {
             GooglePlus.trySilentLogin({
                 'scopes': '',
                 'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com',
-                'offline': true, })
+                'offline': true
+            })
                 .then(function (data) {
                 env.nav.push(UserPage);
                 Splashscreen.hide();

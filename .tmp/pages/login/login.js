@@ -25,7 +25,8 @@ export var LoginPage = (function () {
         GooglePlus.login({
             'scopes': '',
             'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com',
-            'offline': true, })
+            'offline': true
+        })
             .then(function (user) {
             loading.dismiss();
             NativeStorage.setItem('user', {
@@ -44,7 +45,7 @@ export var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Component({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/startapplabs/IonicThemes/Ionic2GoogleLogin/src/pages/login/login.html"*/'<ion-content class="login-content" padding>\n  <ion-row class="top-row">\n    <ion-col>\n      <h1 class="label-logo">LOGO</h1>\n      <p class="label-description">This app helps you discover and buy amazing things all in one place</p>\n    </ion-col>\n  </ion-row>\n  <ion-row class="bottom-row">\n    <ion-col class="login-button">\n      <button ion-button block color="danger" (click)="doGoogleLogin()">Google Login</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/startapplabs/IonicThemes/Ionic2GoogleLogin/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/dayu/pico_y_pala/ionic2/Ionic2GoogleLogin/src/pages/login/login.html"*/'<ion-content class="login-content" padding>\n  <ion-row class="top-row">\n    <ion-col>\n      <h1 class="label-logo">LOGO</h1>\n      <p class="label-description">This app helps you discover and buy amazing things all in one place</p>\n    </ion-col>\n  </ion-row>\n  <ion-row class="bottom-row">\n    <ion-col class="login-button">\n      <button ion-button block color="danger" (click)="doGoogleLogin()">Google Login</button>\n    </ion-col>\n  </ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/dayu/pico_y_pala/ionic2/Ionic2GoogleLogin/src/pages/login/login.html"*/,
         }), 
         __metadata('design:paramtypes', [NavController, LoadingController])
     ], LoginPage);

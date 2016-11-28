@@ -11,10 +11,11 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { GooglePlus, NativeStorage } from 'ionic-native';
 import { LoginPage } from '../login/login';
+import { UserModel } from './user.model';
 export var UserPage = (function () {
     function UserPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.userReady = false;
+        this.user = new UserModel();
     }
     UserPage.prototype.ionViewCanEnter = function () {
         var env = this;
@@ -25,7 +26,6 @@ export var UserPage = (function () {
                 email: data.email,
                 picture: data.picture
             };
-            env.userReady = true;
         }, function (error) {
             console.log(error);
         });
@@ -42,7 +42,7 @@ export var UserPage = (function () {
     };
     UserPage = __decorate([
         Component({
-            selector: 'page-user',template:/*ion-inline-start:"/Users/startapplabs/IonicThemes/Ionic2GoogleLogin/src/pages/user/user.html"*/'<ion-header>\n  <ion-toolbar color="primary">\n    <ion-title>\n      User\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content *ngIf=\'userReady\'>\n\n  <ion-item>\n    <ion-label>Full Name: {{user.name}} </ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>Email: {{user.email}} </ion-label><br>\n  </ion-item>\n  <ion-item>\n    <ion-label>Profile picture:</ion-label>\n  </ion-item>\n  <ion-item>\n    <img [src]="user.picture">\n  </ion-item>\n  <ion-row>\n    <ion-col>\n      <button ion-button block (click)="doGoogleLogout()">Logout</button>\n    </ion-col>\n  </ion-row>\n\n</ion-content>\n'/*ion-inline-end:"/Users/startapplabs/IonicThemes/Ionic2GoogleLogin/src/pages/user/user.html"*/
+            selector: 'page-user',template:/*ion-inline-start:"/Users/dayu/pico_y_pala/ionic2/Ionic2GoogleLogin/src/pages/user/user.html"*/'<ion-header>\n  <ion-toolbar color="primary">\n    <ion-title>\n      User\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-item>\n    <ion-label>Full Name: {{user.name}} </ion-label>\n  </ion-item>\n  <ion-item>\n    <ion-label>Email: {{user.email}} </ion-label><br>\n  </ion-item>\n  <ion-item>\n    <ion-label>Profile picture:</ion-label>\n  </ion-item>\n  <ion-item>\n    <img [src]="user.picture">\n  </ion-item>\n  <ion-row>\n    <ion-col>\n      <button ion-button block (click)="doGoogleLogout()">Logout</button>\n    </ion-col>\n  </ion-row>\n\n</ion-content>\n'/*ion-inline-end:"/Users/dayu/pico_y_pala/ionic2/Ionic2GoogleLogin/src/pages/user/user.html"*/
         }), 
         __metadata('design:paramtypes', [NavController])
     ], UserPage);

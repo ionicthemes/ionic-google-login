@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
-import { StatusBar, Splashscreen, NativeStorage, GooglePlus } from 'ionic-native';
+import { StatusBar, Splashscreen, GooglePlus } from 'ionic-native';
 import { LoginPage } from '../pages/login/login';
 import { UserPage } from '../pages/user/user';
 
@@ -21,17 +21,19 @@ export class MyApp {
       let env = this;
         // user is previously logged and we have his data
         // we will let him access the app
-        GooglePlus.trySilentLogin({
-          'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-          'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
-          'offline': true,})
-          .then(function(data) {
-            env.nav.push(UserPage);
-            Splashscreen.hide();
-          }, function (error){
-            env.nav.push(LoginPage);
-            Splashscreen.hide();
-          })
+      GooglePlus.trySilentLogin({
+        'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
+        'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+        'offline': true
+      })
+      .then(function(data) {
+        env.nav.push(UserPage);
+        Splashscreen.hide();
+      }, function (error){
+        env.nav.push(LoginPage);
+        Splashscreen.hide();
+      });
+
       StatusBar.styleDefault();
     });
   }

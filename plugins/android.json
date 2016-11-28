@@ -13,9 +13,6 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         },
-        "cordova-plugin-googleplus": {
-            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
-        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         },

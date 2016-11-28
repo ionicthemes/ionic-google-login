@@ -47,16 +47,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-googleplus": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-googleplus"
-        },
-        "is_top_level": true,
-        "variables": {
-            "REVERSED_CLIENT_ID": "1091419544653"
-        }
-    },
     "cordova-plugin-nativestorage": {
         "source": {
             "type": "registry",
@@ -64,5 +54,15 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-googleplus": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-googleplus"
+        },
+        "is_top_level": true,
+        "variables": {
+            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.1091419544653-va8ba1ceogvil0370fr34qj861u6tkh2"
+        }
     }
 }

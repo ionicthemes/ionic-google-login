@@ -8,26 +8,29 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.starter"
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         },
         "cordova-plugin-googleplus": {
-            "REVERSED_CLIENT_ID": "1091419544653-jatmpprlpohdu6hm88r0k4en1s5t64n0.apps.googleusercontent.com",
-            "PACKAGE_NAME": "io.ionic.starter"
+            "REVERSED_CLIENT_ID": "com.googleusercontent.apps.1091419544653-va8ba1ceogvil0370fr34qj861u6tkh2",
+            "PACKAGE_NAME": "com.ionicframework.ionic2googlelogin263837"
         }
     },
     "dependent_plugins": {}
