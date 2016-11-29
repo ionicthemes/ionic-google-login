@@ -12,13 +12,26 @@ log.txt
 .vscode/
 npm-debug.log*
 
-
+.idea/
+.sass-cache/
+.tmp/
 .versions/
 coverage/
+dist/
+node_modules/
+tmp/
+temp/
+hooks/
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+PREVIEW/
+DESIGN/
+RELEASE/
+www/
 $RECYCLE.BIN/
 
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-
-.vscode/
