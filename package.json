@@ -1,7 +1,7 @@
 {
-    "name": "ionic-hello-world",
-    "author": "Ionic Framework",
-    "homepage": "http://ionicframework.com/",
+    "name": "ionic2-google-login",
+    "author": "IonicThemes Team",
+    "homepage": "https://ionicthemes.com/",
     "private": true,
     "scripts": {
         "build": "ionic-app-scripts build",
@@ -69,7 +69,7 @@
         "plugins": {
             "cordova-plugin-nativestorage": {},
             "cordova-plugin-googleplus": {
-                "REVERSED_CLIENT_ID": "com.googleusercontent.apps.1091419544653-va8ba1ceogvil0370fr34qj861u6tkh2"
+                "REVERSED_CLIENT_ID": "your_reversed_client_id"
             },
             "cordova-plugin-console": {},
             "cordova-plugin-device": {},
