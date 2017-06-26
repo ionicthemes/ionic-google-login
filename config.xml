@@ -54,7 +54,7 @@
     <plugin name="cordova-plugin-console" spec="^1.0.7" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-googleplus" spec="^5.1.1">
-        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.1091419544653-va8ba1ceogvil0370fr34qj861u6tkh2" />
+        <variable name="REVERSED_CLIENT_ID" value="your_reverse_client_id" />
     </plugin>
     <plugin name="cordova-plugin-nativestorage" spec="^2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
