@@ -18,30 +18,29 @@ export class LoginPage {
 
   doGoogleLogin(){
     let nav = this.navCtrl;
-    let env = this;
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
     loading.present();
     this.googlePlus.login({
       'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-      'webClientId': 'your_webClientId', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+      'webClientId': '1091419544653-nhncrb7n0sk43t3unhqk3q8h6smnbt22.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true
     })
-    .then(function (user) {
+    .then((user) => {
       loading.dismiss();
 
-      env.nativeStorage.setItem('user', {
+      this.nativeStorage.setItem('user', {
         name: user.displayName,
         email: user.email,
         picture: user.imageUrl
       })
-      .then(function(){
+      .then(() => {
         nav.push(UserPage);
-      }, function (error) {
+      }, (error) => {
         console.log(error);
       })
-    }, function (error) {
+    }, (error) => {
       loading.dismiss();
     });
   }

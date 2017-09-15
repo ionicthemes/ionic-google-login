@@ -24,8 +24,7 @@ export class MyApp {
 
       platform.ready().then(() => {
         // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      let env = this;
+        // Here you can do any higher level native things you might need.
         // user is previously logged and we have his data
         // we will let him access the app
       this.googlePlus.trySilentLogin({
@@ -33,12 +32,12 @@ export class MyApp {
         'webClientId': 'webClientId.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
         'offline': true
       })
-      .then(function(data) {
-        env.nav.push(UserPage);
-        env.splashScreen.hide();
-      }, function (error){
-        env.nav.push(LoginPage);
-        env.splashScreen.hide();
+      .then((data) => {
+        this.nav.push(UserPage);
+        this.splashScreen.hide();
+      }, (error) => {
+        this.nav.push(LoginPage);
+        this.splashScreen.hide();
       });
 
       this.statusBar.styleDefault();

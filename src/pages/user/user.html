@@ -1,25 +1,23 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>
-      User
+      User Details
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-  <ion-item>
-    <ion-label>Full Name: {{user.name}} </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Email: {{user.email}} </ion-label><br>
-  </ion-item>
-  <ion-item>
-    <ion-label>Profile picture:</ion-label>
-  </ion-item>
-  <ion-item>
-    <img [src]="user.picture">
-  </ion-item>
+  <ion-card>
+    <img [src]="user.picture"/>
+    <ion-card-content>
+      <ion-card-title>
+        Welcome {{user.name}}!
+        </ion-card-title>
+      <p>
+        Your email is: {{user.email}}
+      </p>
+    </ion-card-content>
+  </ion-card>
   <ion-row>
     <ion-col>
       <button ion-button block (click)="doGoogleLogout()">Logout</button>

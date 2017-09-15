@@ -11,6 +11,7 @@ import { UserModel } from './user.model';
 })
 
 export class UserPage {
+
   user: UserModel = new UserModel();
 
   constructor(
@@ -19,27 +20,25 @@ export class UserPage {
     public googlePlus: GooglePlus) {}
 
   ionViewCanEnter(){
-    let env = this;
     this.nativeStorage.getItem('user')
-    .then(function (data){
-      env.user = {
+    .then((data) => {
+      this.user = {
         name: data.name,
         email: data.email,
         picture: data.picture
       };
-    }, function(error){
+    }, (error) => {
       console.log(error);
     });
   }
 
   doGoogleLogout(){
     let nav = this.navCtrl;
-    let env = this;
     this.googlePlus.logout()
-    .then(function (response) {
-      env.nativeStorage.remove('user');
+    .then((response) => {
+      this.nativeStorage.remove('user');
       nav.push(LoginPage);
-    },function (error) {
+    },(error) => {
       console.log(error);
     })
   }
