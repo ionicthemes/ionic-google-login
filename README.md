@@ -1,6 +1,6 @@
 # Google Authentication in Ionic 4 Apps
 
-This repo is an Ionic v4 starter app to show you how to add Google Plus Log In to an Ionic App. There is also a [detailed tutorial](https://ionicthemes.com/tutorials/about/ionic-google-login) to help you with the Google Account setup and with the step by step of building this Ionic Framework app.
+This repo is an Ionic v4 starter app to show you how to add Google Plus Log In to an Ionic App. There is also a [detailed tutorial](https://ionicthemes.com/tutorials/about/ionic2-google-login) to help you with the Google Account setup and with the step by step of building this Ionic Framework app.
 
 
 For this Ionic example app we are going to build a simple ionic 4 app that allows users to log in using their Google account. Once they log in, they will see a home page with their basic profile info.
