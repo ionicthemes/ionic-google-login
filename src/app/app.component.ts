@@ -1,45 +1,40 @@
-import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav } from 'ionic-angular';
-import { SplashScreen} from "@ionic-native/splash-screen";
-import { StatusBar} from "@ionic-native/status-bar";
-import { GooglePlus } from '@ionic-native/google-plus';
-import { LoginPage } from '../pages/login/login';
-import { UserPage } from '../pages/user/user';
+import { Component } from '@angular/core';
 
-
+import { Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { Router } from '@angular/router';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+  selector: 'app-root',
+  templateUrl: 'app.component.html'
 })
-export class MyApp {
-
-  @ViewChild(Nav) nav: Nav;
-  rootPage: any;
-
+export class AppComponent {
   constructor(
-    platform: Platform,
-    public splashScreen: SplashScreen,
-    public statusBar: StatusBar,
-    public googlePlus: GooglePlus) {
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    private nativeStorage: NativeStorage,
+    private router: Router
+  ) {
+    this.initializeApp();
+  }
 
-      platform.ready().then(() => {
-        // Okay, so the platform is ready and our plugins are available.
-        // Here you can do any higher level native things you might need.
-        // user is previously logged and we have his data
-        // we will let him access the app
-      this.googlePlus.trySilentLogin({
-        'scopes': '', // optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
-        'webClientId': 'webClientId.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
-        'offline': true
+  initializeApp() {
+    this.platform.ready().then(() => {
+      //Here we will check if the user is already logged in
+      //because we don't want to ask users to log in each time they open the app
+      this.nativeStorage.getItem('google_user')
+      .then( data => {
+        //user is previously logged and we have his data
+        //we will let him access the app
+        this.router.navigate(["/user"]);
+        this.splashScreen.hide();
+      }, err => {
+        this.router.navigate(["/login"]);
+        this.splashScreen.hide();
       })
-      .then((data) => {
-        this.nav.push(UserPage);
-        this.splashScreen.hide();
-      }, (error) => {
-        this.nav.push(LoginPage);
-        this.splashScreen.hide();
-      });
-
       this.statusBar.styleDefault();
     });
   }

@@ -1,0 +1,12 @@
+<ion-content *ngIf='userReady'>
+  <ion-card>
+    <ion-img [src]="user.picture"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{user.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{user.email}}</p>
+    </ion-card-content>
+    <ion-button expand="block" (click)="doGoogleLogout()">Log Out</ion-button>
+  </ion-card>
+</ion-content>

@@ -1,8 +1,7 @@
 {
-  "name": "ionic2GoogleLogin",
-  "app_id": "",
-  "type": "ionic-angular",
+  "name": "ionic4-google-login",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "angular"
 }
